@@ -52,3 +52,10 @@ section p{
 {
     text-align:right;
 }
+.Tab{
+    text-align: center;
+    width: 7em;
+    border-radius: 2em;
+    background-color:black;
+    height:7em;
+}
