@@ -1,15 +1,13 @@
 const texts = document.querySelector(".texts");
 
 window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-var voice_flag = 0;
+
 const recognition = new window.SpeechRecognition();
 recognition.interimResults = true;
 
 let p = document.createElement('p');
 
 recognition.addEventListener('result', (e)=>{
-if(voice_flag == 1)
-{
     const text = Array.from(e.results)
     .map(result =>result[0])
     .map(result =>result.transcript)
@@ -46,17 +44,13 @@ if(voice_flag == 1)
         p = document.createElement('p');
     }
     console.log(text);
-}
 })
 
 recognition.addEventListener('end',()=>{
     document.getElementById('PTT').style.background = 'white';
-    voice_flag = 0;
-    
 })
 function start_voice(){
     document.getElementById('PTT').style.background = 'red';
-    voice_flag = 1;
 }
 function selection(title)
 {
