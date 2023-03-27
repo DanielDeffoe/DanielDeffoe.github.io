@@ -8,7 +8,7 @@ recognition.interimResults = true;
 let p = document.createElement('p');
 
 recognition.addEventListener('result', (e)=>{
-if(voice_flag = 1)
+if(voice_flag == 1)
 {
     const text = Array.from(e.results)
     .map(result =>result[0])
@@ -35,11 +35,11 @@ if(voice_flag = 1)
             selection(0);
             
         }
-        if(text.includes('go to Music') || text.includes('Music')){
+        if(text.includes('go to music') || text.includes('Music')){
             selection(1);
             
         }
-        if(text.includes('go to Video') || text.includes('Video')){
+        if(text.includes('go to video') || text.includes('Video')){
             selection(2);
             
         }
@@ -52,6 +52,7 @@ if(voice_flag = 1)
 recognition.addEventListener('end',()=>{
     document.getElementById('PTT').style.background = 'white';
     voice_flag = 0;
+    
 })
 function start_voice(){
     document.getElementById('PTT').style.background = 'red';
@@ -92,4 +93,4 @@ function shades_up(){
     console.log('hello');
     document.getElementById('Shade').src = "shadeUp.png";
 }
-recognition.start()
+recognition.start();
