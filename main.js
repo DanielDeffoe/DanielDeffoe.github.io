@@ -41,14 +41,18 @@ recognition.addEventListener('result', (e)=>{
             selection(2);
             
         }
+        p = document.createElement('p');
     }
     console.log(text);
+    recognition.stop();
 })
 
 recognition.addEventListener('end',()=>{
+    document.getElementById('PTT').style.background = 'white';
     recognition.start();
 })
 function start_voice(){
+    recognition.start();
 }
 function selection(title)
 {
@@ -85,4 +89,3 @@ function shades_up(){
     console.log('hello');
     document.getElementById('Shade').src = "shadeUp.png";
 }
-recognition.start();
