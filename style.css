@@ -59,3 +59,18 @@ section p{
     background-color:black;
     height:7em;
 }
+button {
+    background: white;
+    height: 100px;
+}
+.area{
+    text-align: center;
+}
+.selection_area{
+    display:flex;
+}
+.select{
+    margin:1.0em;
+    background:white;
+    width: 89px;
+}

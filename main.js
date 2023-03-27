@@ -28,6 +28,19 @@ recognition.addEventListener('result', (e)=>{
         }
         if(text.includes('lights off') || text.includes('turn off lights')){
             Light_off();
+            
+        }
+        if(text.includes('go to flight') || text.includes('flight')){
+            selection(0);
+            
+        }
+        if(text.includes('go to Music') || text.includes('Music')){
+            selection(1);
+            
+        }
+        if(text.includes('go to Video') || text.includes('Video')){
+            selection(2);
+            
         }
         p = document.createElement('p');
     }
@@ -35,8 +48,33 @@ recognition.addEventListener('result', (e)=>{
 })
 
 recognition.addEventListener('end',()=>{
-    recognition.start()
+    document.getElementById('PTT').style.background = 'white';
+    recognition.stop()
 })
+function start_voice(){
+    document.getElementById('PTT').style.background = 'red';
+    recognition.start()
+
+}
+function selection(title)
+{
+    document.getElementById('Flight').style.background = 'white';
+    document.getElementById('Music').style.background = 'white';
+    document.getElementById('Video').style.background = 'white';
+    switch(title)
+    {
+        case 0:
+            document.getElementById('Flight').style.background = 'red';
+        break;
+        case 1:
+            document.getElementById('Music').style.background = 'red';
+        break;
+        case 2:
+            document.getElementById('Video').style.background = 'red';
+        break;
+    }
+
+}
 function Light_on(){
     console.log('hello');
     document.getElementById('Light').src = "Daco_on.png";
@@ -53,4 +91,3 @@ function shades_up(){
     console.log('hello');
     document.getElementById('Shade').src = "shadeUp.png";
 }
-recognition.start();

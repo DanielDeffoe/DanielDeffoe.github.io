@@ -16,14 +16,16 @@
             </div>
         </div>
         <div>
-            <div class="tabs">
-                <button type="Button" ID = 'FLIGHT' onclick="alert('Hello world!')"> FLIGHT</button>
-                <button type="Button" ID = 'VIDEO' onclick="alert('Hello world!')"> VIDEO</button>
-                <button type="Button" ID = 'AUDIO' onclick="alert('Hello world!')">AUDIO</button>
-                
+            <div class="area">
+                <button type="Button" ID = 'PTT' onclick="start_voice()"> PUSH TO TALK</button>
                 <ul>
-                    <img src="Daco.png"ID="Light"class = "Tab" onclick="Light_on()">
+                    <img src="Daco.png"ID="Light"class = "Tab">
                     <img src="shadeDown.png"ID="Shade"class ="Tab">
+            </ul>
+            <ul class ='selection_area'>
+                <ul class ='select' ID = 'Flight'> Flight</ul>
+                <ul class ='select' ID = 'Music'> Music</ul>
+                <ul class ='select' ID = 'Video'> Video</ul>
             </ul>
             </div>
         </div>
