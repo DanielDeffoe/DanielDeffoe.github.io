@@ -16,42 +16,39 @@ recognition.addEventListener('result', (e)=>{
     p.innerText = text;
     texts.appendChild(p);
     if(e.results[0].isFinal){
-        if(text.includes('shades down') || text.includes('lower shade')){
+        if(text.includes('shades down') || text.includes('lower shade') || text.includes('Shades down') || text.includes('Lower shade') ){
             shades_down();
         }
-        if(text.includes('shades up') || text.includes('raise shade')){
+        if(text.includes('shades up') || text.includes('raise shade') || text.includes('Shades up') || text.includes('Raise shade')){
             shades_up();
         }
-        if(text.includes('lights on') || text.includes('turn on lights')){
+        if(text.includes('lights on') || text.includes('turn on lights') || text.includes('Lights on') || text.includes('Turn on lights')){
             Light_on();
         }
-        if(text.includes('lights off') || text.includes('turn off lights')){
+        if(text.includes('lights off') || text.includes('turn off lights') || text.includes('Lights off') || text.includes('Turn off lights')){
             Light_off();
             
         }
-        if(text.includes('go to flight') || text.includes('flight')){
+        if(text.includes('go to flight') || text.includes('flight') || text.includes('Go to flight') || text.includes('Flight')){
             selection(0);
             
         }
-        if(text.includes('go to music') || text.includes('Music')){
+        if(text.includes('go to music') || text.includes('Music') || text.includes('Go to music') || text.includes('music')){
             selection(1);
             
         }
-        if(text.includes('go to video') || text.includes('Video')){
+        if(text.includes('go to video') || text.includes('Video') || text.includes('Go to video') || text.includes('video')){
             selection(2);
             
         }
-        p = document.createElement('p');
     }
     console.log(text);
 })
 
 recognition.addEventListener('end',()=>{
-    document.getElementById('PTT').style.background = 'white';
     recognition.start();
 })
 function start_voice(){
-    document.getElementById('PTT').style.background = 'red';
 }
 function selection(title)
 {
