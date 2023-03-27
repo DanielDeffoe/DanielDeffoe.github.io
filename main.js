@@ -49,7 +49,6 @@ recognition.addEventListener('result', (e)=>{
 
 recognition.addEventListener('end',()=>{
     document.getElementById('PTT').style.background = 'white';
-    recognition.start();
 })
 function start_voice(){
     recognition.start();
